@@ -49,8 +49,18 @@
                         echo "<td>pronto</td>";
                     }
                 ?>
+                
             </tbody>
         </table>
-    
+        <button onclick="teste()" id="button">test</button>
+    <script>
+        var estado= true;
+        function teste(){
+            b= document.getElementById('button');
+            b.style
+            estado = !estado
+            console.log(estado)
+        }
+    </script>
 </body>
 </html>

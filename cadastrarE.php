@@ -11,7 +11,7 @@
     <?php
         session_start();
         require_once('./config.php');
-
+        
         if(isset($_POST['submit'])){
             $nome = $_POST['nome'];
             $data = $_POST['data'];
