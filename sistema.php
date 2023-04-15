@@ -45,6 +45,7 @@
         {
             $sql = "SELECT * FROM cliente ORDER BY id DESC";
         }
+       $id=$email;
     $cmd = $pdo->query($sql);
         // $dados = $cmd -> fetchAll(PDO::FETCH_ASSOC);
     ?>
@@ -57,7 +58,7 @@
         <nav>
             <a href="listar.php" >listar</a>
             <a href="cadastrarP.php">cadastrar aparelho</a>
-            <a href='meuAparelho.php?id=[$id]'>visualizar meu aparelho</a>
+            <a href='meuAparelho.php?email=<?php echo $id?>'>visualizar meu aparelho</a>
             <!-- <a href="./pesquisa.php">pesquisar</a> -->
             
             <a href="sair.php"><img src="./img/box-arrow-right.svg" alt="">sair</a>
@@ -111,6 +112,7 @@
                         echo "<td><a class='btn btn-success' href='editar.php?id=$user_data[id]'>editar</a></td>";
                         echo "<td><a class='btn btn-danger'; href='apagar.php?id=$user_data[id]'>apagar</a></td>";
                         echo "<br>";
+                        $id = $user_data['id'];
                     }
                 ?>
             </tbody>

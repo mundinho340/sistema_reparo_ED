@@ -68,8 +68,18 @@
             </div>
              </div>
         <button type="submit" class="btn btn-success" style="marign:auto;" name="submit">Cadastrar</button>
-        <button type="submit" class="btn btn-success" style="marign:auto;">limpar</button>
+        <button class="btn btn-success" style="marign:auto;" onclick="limpar()">limpar</button>
 
      </form>
 </body>
+<script>
+    function limpar(){
+     var   nome = document.getElementById("nome").value="";
+     var   nomeC= document.getElementById("nomeCompleto").value="";
+     var   email= document.getElementById("email").value="";
+     var   senha= document.getElementById("senha").value="";
+     var   contacto= document.getElementById("contacto").value="";
+
+    }
+</script>
 </html>

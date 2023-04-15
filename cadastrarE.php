@@ -17,9 +17,9 @@
             $data = $_POST['data'];
             $tipoA = $_POST['tipo_avaria'];
             $nomeP = $_POST['nome_proprietario'];
-            echo "nome -> $nomeP data -> $data tipoA -> $tipoA nomeP -> $nomeP 😋";
-            $insert =$pdo -> prepare("insert into produto(nome, data, Tipo_avaria, nome_propretario) values(:nome, :data, :tipoA, :nomeP)");
-            $insert -> bindValue(":nome", $nome);
+            echo "nome -> $nome data -> $data tipoA -> $tipoA nomeP -> $nomeP 😋";
+            $insert =$pdo -> prepare("insert into produto(nomep, data, Tipo_avaria, nome_propretario) values(:nome, :data, :tipoA, :nomeP)");
+            $insert -> bindValue(":nomep", $nome);
             $insert -> bindValue(":data", $data);
             $insert -> bindValue(":tipoA", $tipoA);
             $insert -> bindValue(":nomeP",$nomeP);

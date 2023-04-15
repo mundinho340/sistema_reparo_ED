@@ -46,7 +46,7 @@
                         while($user_data = $cmd->fetch(PDO::FETCH_ASSOC)){
                         echo "<tr>";
                         echo "<td>".$user_data['id']."</td>";
-                        echo "<td>".$user_data['nome']."</td>";
+                        echo "<td>".$user_data['nomep']."</td>";
                         echo "<td>".$user_data['data']."</td>";
                         echo "<td>".$user_data['Tipo_avaria']."</td>";
                         echo "<td>".$user_data['nome_propretario']."</td>";

@@ -13,20 +13,19 @@
 <body>
     <?php
         include_once('./config.php');
-        if(isset($_POST['submit'])){
+        // if(isset($_POST['update'])){
             if(!empty($_GET['id'])){
                 $id = $_GET['id'];
-                $selectSQL= "SELECT * FROM cliente WHERE id=$id";
+                $selectSQL= "SELECT * FROM cliente WHERE id='$id'";
                 $result = $pdo->query($selectSQL);
                 
-                if($result->rowCount() > 0){
+                if($result->rowCount()>=0){
                     while($user_data =$result->fetch(PDO::FETCH_ASSOC)){
                         $nome = $user_data['nome'];
                         $nomeCompleto = $user_data['nome_completo'];
                         $email = $user_data['email'];
                         $senha =$user_data['senha'];
                         $contacto = $user_data['contacto'];
-                        echo "nome -> $nome email -> $email senha -> $senha telefone -> $telefone sexo -> $sexo data -> $data_nasc cidade -> $cidade estado -> $estado endereco -> $endereco";
                     }
                     print_r("nome : $nome");
     
@@ -37,43 +36,53 @@
                 header('location: sistema.php');
             }
 
-        }
+        
     ?>
      <form action="editar.php" method="post" id="container" style="width:500px; height:600px; margin:auto; margin-top:15%;">
          <div class="mb-3 row">
-            <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+            <label for="nome" class="col-sm-2 col-form-label" >Nome</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="nome">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="nome"  value=<?php echo $nome; ?> required>
             </div>
              </div>
              <div class="mb-3 row">
-            <label for="nome" class="col-sm-2 col-form-label">Nome Completo</label>
+            <label for="nome" class="col-sm-2 col-form-label"  required>Nome Completo</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="nome" name="nomeCompleto" placeholder="nome completo">
+                <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" placeholder="nome completo" value=<?php echo $nomeCompleto?> required>
             </div>
              </div>
              <div class="mb-3 row">
             <label for="email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="nome" name="email" placeholder="email">
+                <input type="email" class="form-control" id="email" name="email" placeholder="email" value=<?php echo $email?> required>
             </div>
         </div>
                 <div class="mb-3 row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" name="senha">
+            <input type="password" class="form-control" id="senha" name="senha" value=<?php echo $senha?> required>
                 </div>
             </div>
              <div class="mb-3 row">
             <label for="nome" class="col-sm-2 col-form-label">contacto</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="nome" name="contacto" placeholder="contacto">
+                <input type="text" class="form-control" id="contacto" name="contacto" placeholder="contacto" value=<?php echo $contacto?> required>
             </div>
              </div>
         <button type="submit" class="btn btn-success" style="marign:auto;" name="update">Cadastrar</button>
-        <button type="submit" class="btn btn-success" style="marign:auto;">limpar</button>
+        <button class="btn btn-success" style="marign:auto;" onclick="limpar()">limpar</button>
 
      </form>
      
 </body>
+<script>
+    function limpar(){
+     var   nome = document.getElementById("nome").value="";
+     var   nomeC= document.getElementById("nomeCompleto").value="";
+     var   email= document.getElementById("email").value="";
+     var   senha= document.getElementById("senha").value="";
+     var   contacto= document.getElementById("contacto").value="";
+
+    }
+</script>
 </html>
