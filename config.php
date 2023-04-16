@@ -5,7 +5,7 @@
         echo "Error com base de dados ".$e -> getMessage();
     }
 
-    echo "conectado com sucesso";
+    // echo "conectado com sucesso";
 
 
 ?>

@@ -51,7 +51,7 @@
                 <input type="email" class="form-control" id="nome" name="email" placeholder="email" style="margin-left:50px; width:400px;">
             </div>
         </div>
-
+        
         <div class="mb-3 row">
         <label for="nome" class="col-sm-2 col-form-label"></label>
         <br>

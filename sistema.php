@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body{
             background-color:#a8dadc !important;
         }
         header{
+            color:#f1faee;
             display:flex;
             justify-content: space-between !important;
             width:100%;
@@ -17,12 +19,11 @@
             height:90px;
             align-items:center;
         }
-
-        nav{
-            width:700px;
-            display:flex;
-            justify-content: space-between !important;
+        a{
+            text-decoration:none !important;
         }
+
+        
 
     </style>
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -50,23 +51,34 @@
         }
        $id=$email;
     $cmd = $pdo->query($sql);
-        // $dados = $cmd -> fetchAll(PDO::FETCH_ASSOC);
+    // $dados = $cmd -> fetchAll(PDO::FETCH_ASSOC);
     ?>
 <body>
+    <section class="sidebar" id="sidebar">
+            <article id="header">
+                <div type="hidden" class="user-side">
+                 <img src="./img/person-circle.svg" alt="" style="width:40px; height:40px;">
+                    <?php echo $email;?>
+                </div>
+            </article>
+
+            <article id="body">
+                 <nav>
+                    <div><a href="listar.php" >listar</a></div>
+                    <br>
+                    <div><a href="cadastrarP.php">cadastrar aparelho</a></div>
+                    <br>
+                    <div><a href='meuAparelho.php?email=<?php echo $id?>'>visualizar meu aparelho</a></div>
+                    <br>
+                    <div><a href="sair.php"><img src="./img/box-arrow-right.svg" alt="" ">sair</a></div>
+                </nav>
+            </article>
+    </section>
     <header style="display:flex;">
         <div type="hidden" class="user">
             <img src="./img/person-circle.svg" alt="" style="width:40px; height:40px;">
             <?php echo $email;?>
         </div>
-        <nav>
-            <a href="listar.php" >listar</a>
-            <a href="cadastrarP.php">cadastrar aparelho</a>
-            <a href='meuAparelho.php?email=<?php echo $id?>'>visualizar meu aparelho</a>
-            <!-- <a href="./pesquisa.php">pesquisar</a> -->
-            
-            <a href="sair.php"><img src="./img/box-arrow-right.svg" alt="">sair</a>
-        </nav>
-        
         <!-- <div style="display=flex; ">
             <div><input type="search" placeholder="pesquisar" class="form-control"  name="pesquisar" margin:0px;>
                 <img src="./img/search.svg" alt="" style="margin-left:180px; margin-top:-65px;" >
@@ -81,14 +93,14 @@
             </svg>
         </button>
     </div>
-        <button onclick="side()" style="width:80px; height:40px; align-items:center; text-align:center; border:none; background:transparent;">
+        <button style="width:80px; height:40px; align-items:center; text-align:center; border:none; background:transparent;">
             <div style="margin-left:40px; !important">
-                <img style="width:35px;" src="./img/sliders2.svg" alt="">
+                <img style="width:35px;" src="./img/sliders2.svg" alt="" onclick="sidebar()">
             </div>
 
         </button>
     </header>
-    
+
     <div  class="m-50">
         <table  class="table text-black table-bg">
             <thead>
@@ -124,6 +136,26 @@
     </div>
 </body>
 <script>
+    var state= false;
+    side = document.getElementById('sidebar')
+
+    function sidebar(){
+        state= !state;
+        // if(state == true){
+        //     
+        //     console.log(state)
+        // }
+         console.log(state)
+         if(state == true){
+            side.style.marginLeft=0;
+         }else{
+             side.style.marginLeft=`${-250}px`;
+             side.style.transition=`${0.1}s`;
+
+         }
+            
+    }
+    
     var search = document.getElementById('pesquisar');
 
     search.addEventListener("keydown", function(event) {
