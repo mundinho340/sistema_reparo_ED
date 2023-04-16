@@ -7,12 +7,15 @@
     <title>Document</title>
     <style>
         body{
-            
+            background-color:#a8dadc !important;
         }
         header{
             display:flex;
             justify-content: space-between !important;
-            width:1250px;
+            width:100%;
+            background-color:#1d3557;
+            height:90px;
+            align-items:center;
         }
 
         nav{
@@ -52,7 +55,7 @@
 <body>
     <header style="display:flex;">
         <div type="hidden" class="user">
-            <img src="" alt="">
+            <img src="./img/person-circle.svg" alt="" style="width:40px; height:40px;">
             <?php echo $email;?>
         </div>
         <nav>
