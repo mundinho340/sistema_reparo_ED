@@ -5,8 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        body{
+            background-color:#a8dadc !important;
+        }
+
+        form{
+            align-items:center;
+            width:500px;
+            height:500px;
+            padding:40px;
+        }
+
+        form input{
+            marign:20px !important;
+        }
+
+    </style>
+    <!-- /* <link rel="stylesheet" href="style.css"> */ -->
+    /* <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> */
 </head>
 
 <?php
@@ -36,7 +53,8 @@
     }
 ?>
 <body>
-     <form action="formulario.php" method="post" id="container" style="width:500px;background-color:#0d350123; height:500px; border-radius:10px; align-items:center; text-align:center; margin:auto; margin-top:10%;">
+     <form action="formulario.php" method="post" id="container" style="background-color:#1d3557; color:white;  border-radius:10px; align-items:center; text-align:center; margin:auto; margin-top:10%;">
+     <img src="./img/people.svg" alt="" style="width:40px; height:40px; margin-bottom:20px;">
          <div class="mb-3 row">
             <label for="nome" class="col-sm-2 col-form-label">Nome</label>
             <div class="col-sm-10">

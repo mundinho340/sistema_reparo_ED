@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
          <style>
             body{
                 text-align:center;
+                background-color:#a8dadc !important;
             }
+           
          </style>
     <title>Document</title>
 </head>
@@ -37,9 +40,8 @@
         }
     }
 
-?><header>
+?>
     <a href="./formulario.php">sair</a>
-</header>
     <form action="signin.php" method="post" id="container" style="width:500px;background-color:#0d350123; height:400px; border-radius:10px; align-items:center; text-align:center; margin:auto; margin-top:10%;">
         <legend style="text-align:center; margin:bottom:10px;">Login</legend>
         <fieldset border=1; style="text-align:center;">

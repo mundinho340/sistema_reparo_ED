@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>formu</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body{
             background-color:#a8dadc !important;
+        }
+
+        img{
+            margin-bottom:20px !important;
         }
         header{
             color:#f1faee;
@@ -55,8 +59,8 @@
     ?>
 <body>
     <section class="sidebar" id="sidebar">
-            <article id="header">
-                <div type="hidden" class="user-side">
+            <article id="header" style="align-items:center;">
+                <div type="hidden" class="user-side" style="align-items:center;"> 
                  <img src="./img/person-circle.svg" alt="" style="width:40px; height:40px;">
                     <?php echo $email;?>
                 </div>
@@ -64,11 +68,17 @@
 
             <article id="body">
                  <nav>
-                    <div><a href="listar.php" >listar</a></div>
+                     <div>
+                        <img src="./img/card-checklist.svg" alt="">
+                        <a href="listar.php" >listar</a></div>
                     <br>
-                    <div><a href="cadastrarP.php">cadastrar aparelho</a></div>
+                    <div>
+                        <img src="./img/phone-flip.svg" alt="">
+                        <a href="cadastrarP.php">cadastrar aparelho</a></div>
                     <br>
-                    <div><a href='meuAparelho.php?email=<?php echo $id?>'>visualizar meu aparelho</a></div>
+                    <div>
+                        <img src="./img/phone.svg" alt="">
+                        <a href='meuAparelho.php?email=<?php echo $id?>'>visualizar meu aparelho</a></div>
                     <br>
                     <div><a href="sair.php"><img src="./img/box-arrow-right.svg" alt="" ">sair</a></div>
                 </nav>

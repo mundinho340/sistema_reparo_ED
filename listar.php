@@ -7,8 +7,21 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Document</title>
+    <style>
+        body{
+            background-color:#a8dadc !important;
+
+        }
+
+        .back{
+            margin-left:20px;
+            width:30px;
+            height:30px;
+        } 
+    </style>
 </head>
 <body>
+    
     <?php
      session_start();
         require_once("./config.php");
@@ -23,6 +36,13 @@
           $cmd->execute();
         // $dados = $cmd -> fetchAll(PDO::FETCH_ASSOC);
     ?>
+
+    <header>
+        <a href="./sistema.php"><img src="./img/arrow-left-square.svg" alt="" class="back"></a>
+        <div>
+
+        </div>
+    </header>
     <div  class="m-50">
         <table  class="table text-black table-bg">
             <thead>
@@ -47,7 +67,7 @@
                         while($user_data = $cmd->fetch(PDO::FETCH_ASSOC)){
                         echo "<tr>";
                         echo "<td>".$user_data['id']."</td>";
-                        echo "<td>".$user_data['nomep']."</td>";
+                        echo "<td>".$user_data['nome']."</td>";
                         echo "<td>".$user_data['data']."</td>";
                         echo "<td>".$user_data['Tipo_avaria']."</td>";
                         echo "<td>".$user_data['nome_propretario']."</td>";
