@@ -12,7 +12,15 @@
             background-color:#a8dadc !important;
 
         }
-
+        header{
+            color:#f1faee;
+            display:flex;
+            justify-content: space-between !important;
+            width:100%;
+            background-color:#1d3557 !important;
+            height:90px;
+            align-items:center;
+        }
         .back{
             margin-left:20px;
             width:30px;

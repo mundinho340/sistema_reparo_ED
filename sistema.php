@@ -19,7 +19,7 @@
             display:flex;
             justify-content: space-between !important;
             width:100%;
-            background-color:#1d3557;
+            background-color:#1d3557 !important;
             height:90px;
             align-items:center;
         }

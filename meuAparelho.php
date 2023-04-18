@@ -34,7 +34,7 @@
         <p><?php echo $email ?></p>
     </header>
 
-        <table class="table text-black table-bg">>
+        <table class="table text-black table-bg">
             <thead>
                 <tr>
                      <th scope="col">id</th>

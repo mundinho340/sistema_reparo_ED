@@ -7,7 +7,7 @@ body{
 }
 
 header{
-            color:#f1faee;
+            color:white !important;
             display:flex;
             justify-content: space-between !important;
             width:100%;
@@ -55,6 +55,7 @@ header{
             width:250px !important;
             position:absolute;
             height:800px !important;
-            background:white !important;
+            /* background:white !important; */
+            background:#1d3557 !important;
 
         }
