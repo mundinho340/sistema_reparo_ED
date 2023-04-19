@@ -22,16 +22,17 @@
             $nomeP = $_POST['nome_proprietario'];
             echo "nome -> $nome data -> $data tipoA -> $tipoA nomeP -> $nomeP 😋";
             $insert =$pdo -> prepare("insert into produto(nomep, data, Tipo_avaria, nome_propretario) values(:nome, :data, :tipoA, :nomeP)");
-            $insert -> bindValue(":nomep", $nome);
+            $insert -> bindValue(":nome", $nome);
             $insert -> bindValue(":data", $data);
             $insert -> bindValue(":tipoA", $tipoA);
             $insert -> bindValue(":nomeP",$nomeP);
             $insert -> execute();
-            header("location: signin.php");
+            header("location: sistema.php");
         }
 
     ?>
     <h1>Cadastre o teu equipamento</h1>
+    
      <form action="cadastrarE.php" method="post" id="container" style="width:500px; height:600px; margin:auto; margin-top:10%;">
         <legend>Formulario</legend>
         <fieldset border=1;>
