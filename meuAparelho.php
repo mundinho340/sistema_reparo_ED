@@ -15,6 +15,15 @@
 
         header{
              background-color:#1d3557 ;
+              height:90px;
+              color:white;
+
+        }
+
+        header div{
+              display:flex;
+            justify-content:space-between !important;
+            width:1400px;
         }
     </style>
     <title>Document</title>
@@ -35,13 +44,15 @@
             $cmd->execute();
     ?>
     <header >
-        <h1>Meu aparelho</h1>
-        
-        <p><?php echo $email ?></p>
-        <button id="header" onclick="teste()"></button>
+        <div>
+            <h1>Meu aparelho</h1>
+            
+            <p><?php echo $email ?></p>
+            <button id="button" onclick="teste()"></button>
+        </div>
     </header>
 
-        <table class="table text-black table-bg">
+        <table class="table  table-bg">
             <thead>
                 <tr>
                      <th scope="col">id</th>
@@ -65,7 +76,6 @@
                 
             </tbody>
         </table>
-        <button onclick="teste()" id="button">test</button>
     <script>
         let img = document.createElement("img")
          let img1= document.createElement("img")
@@ -74,6 +84,7 @@
         let container =document.querySelector("button")
         let body = document.querySelector("body")
         let header= document.querySelector("header")
+        let table = document.querySelector("table")
         
         // container.appendChild(img)
         var estado= true;
@@ -85,16 +96,19 @@
             console.log(estado)
             if(estado === true){
                 img1.remove()
-                   header.style.backgroundColor="blue"
-                body.style.backgroundColor="blue"
+                header.style.backgroundColor="#1d3557 "
+                body.style.backgroundColor="#a8dadc"
+                header.style.color="white"
+                 table.style.color="black"
                 container.appendChild(img);
-                body.style.backgroundColor="white" ;
+            
             }else{
                 img.remove()
 
                 header.style.backgroundColor="#09030F"
                 body.style.backgroundColor="#070823"
-                body.style.color="white"
+                table.style.color="white"
+                header.style.color="#1EA3E6"
                  container.appendChild(img1);
             }
         }
