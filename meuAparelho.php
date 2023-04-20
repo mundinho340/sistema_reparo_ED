@@ -11,6 +11,10 @@
             background-color:#a8dadc !important;
 
         }
+
+        header{
+             background-color:#1d3557 !important;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -31,6 +35,7 @@
     ?>
     <header>
         <h1>Meu aparelho</h1>
+        <img src="" alt="">
         <p><?php echo $email ?></p>
     </header>
 
