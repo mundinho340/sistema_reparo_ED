@@ -16,6 +16,7 @@
     <title>Document</title>
 </head>
 <body>
+    //k19 desenvolvimento web
     <?php
     session_start();
     require_once("./config.php");
@@ -35,7 +36,7 @@
         }else{
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
-           header('location: sistema.php');
+        //    header('location: sistema.php');
 
         }
     }
@@ -69,7 +70,7 @@
 
      </fieldset>
 
-     <a href="">
+     <a href="./foget/step1.php">
          <p style="margin-top:20px;">forgot password?</p>
      </a>
      </form>
