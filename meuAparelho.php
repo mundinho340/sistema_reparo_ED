@@ -95,6 +95,7 @@
             estado = !estado
             console.log(estado)
             if(estado === true){
+                localStorage.setItem("dark", false);
                 img1.remove()
                 header.style.backgroundColor="#1d3557 "
                 body.style.backgroundColor="#a8dadc"
@@ -104,7 +105,7 @@
             
             }else{
                 img.remove()
-
+                localStorage.setItem("dark", true);
                 header.style.backgroundColor="#09030F"
                 body.style.backgroundColor="#070823"
                 table.style.color="white"
