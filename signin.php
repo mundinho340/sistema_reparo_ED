@@ -18,8 +18,8 @@
 <body>
     //k19 desenvolvimento web
     <?php
-    session_start();
-    require_once("./config.php");
+        session_start();
+        require_once("./config.php");
     
     if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])){
         include_once('./config.php');
@@ -36,7 +36,7 @@
         }else{
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
-        //    header('location: sistema.php');
+           header('location: sistema.php');
 
         }
     }
