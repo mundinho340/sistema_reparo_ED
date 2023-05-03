@@ -42,6 +42,7 @@
             }
             $cmd =$pdo ->prepare("select id,nomep , data, Tipo_avaria from produto where nome_propretario='$name';");
             $cmd->execute();
+            //sommervile -> 
     ?>
     <header >
         <div>
