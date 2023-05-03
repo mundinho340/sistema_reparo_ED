@@ -37,7 +37,7 @@
         echo "nome -> $nome nomeC -> $nomeCompleto email -> $email senha -> $senha contacto->$contacto  😋";
         $insert =$pdo -> prepare("insert into cliente(nome,      nome_completo, email, senha, contacto) values(:nome, :nome_completo, :email, :senha, :contacto)");
         $insert -> bindValue(":nome", $nome);
-         $insert -> bindValue(":nome_completo", $nomeCompleto);
+        $insert -> bindValue(":nome_completo", $nomeCompleto);
         $insert -> bindValue(":email", $email);
         $insert -> bindValue(":senha",$senha);
         $insert -> bindVAlue(":contacto", $contacto);
