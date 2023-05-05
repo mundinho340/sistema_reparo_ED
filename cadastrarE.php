@@ -33,7 +33,47 @@
 
     ?>
     <h1>Cadastre o teu equipamento</h1>
-    
+     <section class="sidebar" id="sidebar">
+            <article id="header" style="align-items:center;">
+                <div type="hidden" class="user-side" style="align-items:center;"> 
+                 <img src="./img/person-circle.svg" alt="" style="width:40px; height:40px;">
+                    <?php echo $email;?>
+                </div>
+            </article>
+
+            <article id="body">
+                 <nav>
+                     <div>
+                        <img src="./img/card-checklist.svg" alt="">
+                        <a href="listar.php" >listar</a></div>
+                    <br>
+                    <div>
+                        <img src="./img/phone-flip.svg" alt="">
+                        <a href="cadastrarP.php">cadastrar aparelho</a></div>
+                    <br>
+                    <div>
+                        <img src="./img/phone.svg" alt="">
+                        <a href='meuAparelho.php?email=<?php echo $id?>'>visualizar meu aparelho</a></div>
+                    <br>
+                    <div><a href="sair.php"><img src="./img/box-arrow-right.svg" alt="" ">sair</a></div>
+                </nav>
+            </article>
+    </section>
+    <header >
+        <div>
+            <h1>Meu aparelho</h1>
+            
+            <p><?php echo $email ?></p>
+            <button id="button" onclick="teste()"></button>
+        </div>
+         <button style="width:80px; height:40px; align-items:center; text-align:center; border:none; background:transparent;">
+            <div style="margin-left:40px; !important">
+                <img style="width:35px;" src="./img/sliders2.svg" alt="" onclick="sidebar()">
+            </div>
+
+        </button>
+    </header>
+
      <form action="cadastrarE.php" method="post" id="container" style="width:500px; height:600px; margin:auto; margin-top:10%;">
         <legend>Formulario</legend>
         <fieldset border=1;>
