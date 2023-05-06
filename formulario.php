@@ -42,7 +42,7 @@
         $insert -> bindValue(":senha",$senha);
         $insert -> bindVAlue(":contacto", $contacto);
         $insert -> execute();
-         header('location: cadastrarE.php');
+         header('location: sistema.php');
         // if(!empty($nome) and !empty($nomeCompleto) and !empty($email) and !empty($senha) and !empty($cotacto)){
         //     $insert -> execute();
         //     header('location: cadastrarE.php');
