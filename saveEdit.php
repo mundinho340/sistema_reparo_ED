@@ -12,7 +12,7 @@
         $cidade= $_POST["cidade"];
         $estado =$_POST["estado"];
 
-        $sqlUpdate = "UPDATE cliente SET nome='$nome',telefone='$telefone', email='$email',sexo='$sexo', date_nasc='$data_nasc', cidade='$cidade', estado='$estado', senha='$senha' WHERE id='$id'";
+        $sqlUpdate = "UPDATE utilizadorr SET nome='$nome',telefone='$telefone', email='$email',sexo='$sexo', date_nasc='$data_nasc', cidade='$cidade', estado='$estado', senha='$senha' WHERE id='$id'";
 
         $result = $conexao->query($sqlUpdate);
     }
