@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="style.css"> -->
+     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <style>
         body{
@@ -13,20 +14,40 @@
 
         }
 
-        header{
+        /* header{
              background-color:#1d3557 ;
               height:90px;
               color:white;
 
-        }
+        } */
 
         header div{
               display:flex;
             justify-content:space-between !important;
             width:1400px;
         }
+        body{
+            background-color:#a8dadc !important;
+        }
+
+        img{
+            margin-bottom:20px !important;
+        }
+        header{
+            color:#f1faee;
+            display:flex;
+            justify-content: space-between !important;
+            width:100%;
+            background-color:#1d3557 !important;
+            height:90px;
+            align-items:center;
+        }
+        a{
+            text-decoration:none !important;
+        }
     </style>
     <title>Document</title>
+   
 </head>
 <body>
     <?php
@@ -44,6 +65,33 @@
             $cmd->execute();
             //sommervile -> 
     ?>
+     <section class="sidebar" id="sidebar">
+            <article id="header" style="align-items:center;">
+                <div type="hidden" class="user-side" style="align-items:center;"> 
+                 <img src="./img/person-circle.svg" alt="" style="width:40px; height:40px;">
+                    <?php echo $email;?>
+                </div>
+            </article>
+
+            <article id="body">
+                 <nav>
+                     <div>
+                        <img src="./img/card-checklist.svg" alt="">
+                        <a href="listar.php" >listar</a></div>
+                    <br>
+                    <div>
+                        <img src="./img/phone-flip.svg" alt="">
+                        <a href="cadastrarP.php">cadastrar aparelho</a></div>
+                    <br>
+                    <div>
+                        <!-- edx.com -->
+                        <img src="./img/phone.svg" alt="">
+                        <a href='meuAparelho.php?email=<?php echo $id?>'>visualizar meu aparelho</a></div>
+                    <br>
+                    <div><a href="sair.php"><img src="./img/box-arrow-right.svg" alt="" ">sair</a></div>
+                </nav>
+            </article>
+    </section>
     <header >
         <div>
             <h1>Meu aparelho</h1>
@@ -51,6 +99,12 @@
             <p><?php echo $email ?></p>
             <button id="button" onclick="teste()"></button>
         </div>
+         <button style="width:80px; height:40px; align-items:center; text-align:center; border:none; background:transparent;">
+            <div style="margin-left:40px; !important">
+                <img style="width:35px;" src="./img/sliders2.svg" alt="" onclick="sidebar()">
+            </div>
+
+        </button>
     </header>
 
         <table class="table  table-bg">
@@ -77,7 +131,8 @@
                 
             </tbody>
         </table>
-    <script>
+ <script src="./side.js"></script>
+    <script >
         let img = document.createElement("img")
          let img1= document.createElement("img")
         img.src = "./img/lightbulb.svg"
