@@ -38,28 +38,24 @@
 
 
 <body>
+
     <?php
-    include_once('../controller/config.php');
+            include_once('./config.php');
 
-    if(isset($_POST['update'])){
-        $id=$_POST["id"];
-        $nome = $_POST["nome"];
-        $nomeCompleto = $_POST["nome_completo"]
-        $email =$_POST["email"];
-        $senha= $_POST["senha"];
-        $contacto = $_POST['contacto'];
-        $sqlUpdate = "UPDATE utilizadorr SET nome='$nome',nome_completo='$nomeCompleto,email='$email',telefone='$telefone', senha='$senha' WHERE id='$id'";
-
-        $result = $conexao->query($sqlUpdate);
-    }
-
-    header('location: sistema.php');
-?>
-    <?php
-        include_once('./config.php');
-        if(isset($_POST['update'])){
+        // if(isset($_POST['update'])){
+            session_start();
             if(!empty($_GET['id'])){
                 $id = $_GET['id'];
+                include_once('./config.php');
+                if(isset($_POST['update'])){
+                $nome = $_POST["nome"];
+                $nomeCompleto = $_POST["nomeCompleto"];
+                $email =$_POST["email"];
+                $senha= $_POST["senha"];
+                $contacto = $_POST['contacto'];
+                $sqlUpdate = "UPDATE cliente SET nome='$nome',nome_completo='$nomeCompleto',email='$email',contacto='$contacto', senha='$senha' WHERE id='$id'";
+                $result = $pdo->query($sqlUpdate);
+    }
                 $selectSQL= "SELECT * FROM cliente WHERE id='$id'";
                 $result = $pdo->query($selectSQL);
                 
@@ -71,7 +67,7 @@
                         $senha =$user_data['senha'];
                         $contacto = $user_data['contacto'];
                     }
-                    print_r("nome : $nome");
+                    print_r("nome : $nome ");
     
                     }else{
                         header('location: sistema.php');
@@ -80,13 +76,13 @@
                 header('location: sistema.php');
             }
 
-        }
+        // }
     ?>
      <section class="sidebar" id="sidebar">
             <article id="header" style="align-items:center;">
                 <div type="hidden" class="user-side" style="align-items:center;"> 
                  <img src="./img/person-circle.svg" alt="" style="width:40px; height:40px;">
-                    <!-- <?php echo $email;?> -->
+                    <?php echo $email;?>
                 </div>
             </article>
 
@@ -121,8 +117,9 @@
         </button>
     </header>
 
-     <form action="editar.php" method="post" id="container" style="width:500px; height:600px; margin:auto; margin-top:15%;">
+     <form action="./controller/edit.php" method="post" id="container" style="width:500px; height:600px; margin:auto; margin-top:15%;">
          <div class="mb-3 row">
+            <input type="hidden" name="id" value=<?php echo $id?>>
             <label for="nome" class="col-sm-2 col-form-label" >Nome</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="nome"  value=<?php echo $nome; ?> required>
