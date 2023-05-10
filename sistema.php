@@ -7,6 +7,7 @@
     <title>formu</title>
     <link rel="stylesheet" href="style.css">
     <style>
+         
         body{
             background-color:#a8dadc !important;
         }
@@ -22,12 +23,16 @@
             background-color:#1d3557 !important;
             height:90px;
             align-items:center;
+            margin-bottom:0px !important;
         }
         a{
             text-decoration:none !important;
         }
 
-        
+        section{
+            margin-bottom:0px !important;
+            padding: auto;
+        }
 
     </style>
     <script src="./controller/script.js"></script>
@@ -59,7 +64,7 @@
     // $dados = $cmd -> fetchAll(PDO::FETCH_ASSOC);
     ?>
 <body>
-    <section class="sidebar" id="sidebar">
+    <section class="sidebar" id="sidebar" >
             <article id="header" style="align-items:center;">
                 <div type="hidden" class="user-side" style="align-items:center;"> 
                  <img src="./img/person-circle.svg" alt="" style="width:40px; height:40px;">
@@ -75,7 +80,7 @@
                     <br>
                     <div>
                         <img src="./img/phone-flip.svg" alt="">
-                        <a href="cadastrarP.php">cadastrar aparelho</a></div>
+                        <a href='cadastrarP.php?email=<?php echo $id?>'>cadastrar aparelho</a></div>
                     <br>
                     <div>
                         <img src="./img/phone.svg" alt="">
@@ -85,7 +90,7 @@
                 </nav>
             </article>
     </section>
-    <header style="display:flex;">
+    <header style="display:flex;" >
         <div type="hidden" class="user">
             <img src="./img/person-circle.svg" alt="" style="width:40px; height:40px;">
             <?php echo $email;?>
@@ -143,42 +148,9 @@
             </tbody>
         </table>
         <input type="hidden" name="id">
-    </div>
+    </d iv>
+    <script src="./side.js"></script>
 </body>
-<script>
-    var state= false;
-    side = document.getElementById('sidebar')
 
-    function sidebar(){
-        state= !state;
-        // if(state == true){
-        //     
-        //     console.log(state)
-        // }
-         console.log(state)
-         if(state == true){
-            side.style.marginLeft=0;
-         }else{
-             side.style.marginLeft=`${-250}px`;
-             side.style.transition=`${0.1}s`;
-
-         }
-            
-    }
-    
-    var search = document.getElementById('pesquisar');
-
-    search.addEventListener("keydown", function(event) {
-        if (event.key === "Enter") 
-        {
-            searchData();
-        }
-    });
-
-    function searchData()
-    {
-        window.location = 'sistema.php?search='+search.value;
-    }
-</script>
 
 </html>
