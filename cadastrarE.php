@@ -70,7 +70,6 @@
             <div style="margin-left:40px; !important">
                 <img style="width:35px;" src="./img/sliders2.svg" alt="" onclick="sidebar()">
             </div>
-
         </button>
     </header>
 
@@ -98,7 +97,7 @@
                 <div class="mb-3 row">
             <label for="inputPassword" class="col-sm-2 col-form-label">nome propretario</label>
             <div class="col-sm-10">
-            <input type="text" class="form-control" id="propretario" name="nome_proprietario">
+            <input type="text" class="form-control" id="propretario" name="nome_proprietario" placeholder="nome do propretario">
                 </div>
             </div>
             
