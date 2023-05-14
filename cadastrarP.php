@@ -38,7 +38,6 @@
     <?php
         require_once('./config.php');
         session_start();
-      
         if(isset($_POST['submit'])){
             $nome = $_POST['nome'];
             $data = $_POST['data'];
@@ -63,7 +62,6 @@
                     <?php echo $email;?>
                 </div>
             </article>
-
             <article id="body">
                  <nav>
                      <div>
