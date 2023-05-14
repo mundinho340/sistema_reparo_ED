@@ -23,9 +23,8 @@
 
     </style>
     <!-- /* <link rel="stylesheet" href="style.css"> */ -->
-    /* <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> */
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> 
 </head>
-
 <?php
     require_once('./config.php');
     if(isset($_POST['submit'])){
@@ -43,13 +42,6 @@
         $insert -> bindVAlue(":contacto", $contacto);
         $insert -> execute();
          header('location: sistema.php');
-        // if(!empty($nome) and !empty($nomeCompleto) and !empty($email) and !empty($senha) and !empty($cotacto)){
-        //     $insert -> execute();
-        //     header('location: cadastrarE.php');
-        // }else{
-        //     header('location: formulario.php');
-        // }
-        
     }
 ?>
 <body>
