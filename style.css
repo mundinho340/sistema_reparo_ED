@@ -2,8 +2,8 @@ body{
     background-color:#224957 !important;
 }
 *{
-    padding:0px;
-    margin:0px;
+    padding:0px !important;
+    margin:0px !important;
 }
 
 header{
@@ -12,8 +12,10 @@ header{
             justify-content: space-between !important;
             width:100%;
             background-color:#a8dadc !important;
+            position:fixed !important;
             height:90px;
             align-items:center;
+            margin-bottom:0px !important;
             box-shadow:10px 10px 10px #457b9d !important;
         }
         a{
@@ -49,14 +51,18 @@ header{
         }
 
         
-
+        table{
+            position:fixed !relative;
+            margin-top: -60px !important;
+        }
         .sidebar{
             margin-left :-250px;
             width:250px !important;
-            position:absolute;
+            position:fixed !important;
             height:800px !important;
             /* background:white !important; */
             /* background:#1d3557 !important; */
             background:#2C5861 !important;
+            margin-bottom:0px !important;
 
         }
