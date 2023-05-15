@@ -7,13 +7,16 @@
     <title>formu</title>
     <link rel="stylesheet" href="style.css">
     <style>
-         
         body{
             background-color:#a8dadc !important;
         }
 
         img{
             margin-bottom:20px !important;
+        }
+        
+        table{
+            margin-top:0px !important;
         }
         header{
             color:#f1faee;
@@ -25,6 +28,19 @@
             align-items:center;
             margin-bottom:0px !important;
         }
+        thead{
+            margin-top:0px !important;
+            border:solid #ddd 1px !important;
+        }
+        thead th{
+            margin-top:0px !important;
+            border:solid #ddd 1px !important;
+        }
+          tbody td{
+            margin-top:0px !important;
+            border:solid #aaaa 1px !important;
+        }
+        
         a{
             text-decoration:none !important;
         }
@@ -117,7 +133,7 @@
         </button>
     </header>
 
-    <div  class="m-50">
+    <div  class="m-50" id="table">
         <table  class="table text-black table-bg">
             <thead>
                 <tr>
