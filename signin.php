@@ -16,33 +16,29 @@
     <title>Document</title>
 </head>
 <body>
-   
     <?php
         session_start();
         require_once("./config.php");
-    
-    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])){
-        include_once('./config.php');
-        $email= $_POST["email"];
-        $senha= $_POST['senha'];
+        if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])){
+            include_once('./config.php');
+            $email= $_POST["email"];
+            $senha= $_POST['senha'];
 
-        $sql = "SELECT * FROM cliente WHERE email='$email' and senha ='$senha'";
-        $result=$pdo -> query($sql);
-        if($result ->rowCount()< 1){
-            unset($_SESSION['email']);
-            unset($_SESSION['senha']);
-           print_r("Erro usuario nao encontrado");
-           header("location: signin.php");
+            $sql = "SELECT * FROM cliente WHERE email='$email' and senha ='$senha'";
+            $result=$pdo -> query($sql);
+            if($result ->rowCount()< 1){
+                unset($_SESSION['email']);
+                unset($_SESSION['senha']);
+            print_r("Erro usuario nao encontrado");
+            header("location: signin.php");
         }else{
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
            header('location: sistema.php');
-
         }
     }
-
 ?>
-    <a href="./formulario.php">sair</a>
+    <a href="./formulario.php">Cadastre-se</a>
     <form action="signin.php" method="post" id="container" style="width:500px;background-color:#1d3557; height:400px; border-radius:10px; align-items:center; text-align:center; margin:auto; margin-top:10%;">
         <legend style="text-align:center; margin:bottom:10px;">Login</legend>
         <fieldset border=1; style="text-align:center;">
