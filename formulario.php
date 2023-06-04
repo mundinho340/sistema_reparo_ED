@@ -28,19 +28,32 @@
 <?php
     require_once('./config.php');
     if(isset($_POST['submit'])){
-        $nome = $_POST['nome'];
-        $nomeCompleto = $_POST['nomeCompleto'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $contacto = $_POST['contacto'];
-        echo "nome -> $nome nomeC -> $nomeCompleto email -> $email senha -> $senha contacto->$contacto  😋";
-        $insert =$pdo -> prepare("insert into cliente(nome,      nome_completo, email, senha, contacto) values(:nome, :nome_completo, :email, :senha, :contacto)");
-        $insert -> bindValue(":nome", $nome);
-        $insert -> bindValue(":nome_completo", $nomeCompleto);
-        $insert -> bindValue(":email", $email);
-        $insert -> bindValue(":senha",$senha);
-        $insert -> bindVAlue(":contacto", $contacto);
-        $insert -> execute();
+        $xml = simplexml_load_file("dados.xml");
+        $content = $xml -> addChild("usuario");
+        $content -> addChild("nome", $_POST["nome"]);
+        $content -> addChild("nomeCompleto", $_POST["nomeCompleto"]);
+        $content -> addChild("email", $_POST["email"]);
+        $content -> addChild("senha", $_POST["senha"]);
+        $content -> addChild("contacto", $_POST["contacto"]);
+
+        $xml -> asXML("dados.xml");
+        // $nome = $_POST['nome'];
+        // $nomeCompleto = $_POST['nomeCompleto'];
+        // $email = $_POST['email'];
+        // $senha = $_POST['senha'];
+        // $contacto = $_POST['contacto'];
+      
+
+        foreach($xml ->usuario as $user ){
+            echo "nome -> $nome nomeC -> $nomeCompleto email -> $email senha -> $senha contacto->$contacto  😋";
+            $insert =$pdo -> prepare("insert into cliente(nome,      nome_completo, email, senha, contacto) values(:nome, :nome_completo, :email, :senha, :contacto)");
+            $insert -> bindValue(":nome", $user->nome);
+            $insert -> bindValue(":nome_completo", $user-> nomeCompleto);
+            $insert -> bindValue(":email", $user -> email);
+            $insert -> bindValue(":senha",$user ->senha);
+            $insert -> bindVAlue(":contacto", $user->contacto);
+            $insert -> execute();
+        }
          header('location: sistema.php');
     }
 ?>
